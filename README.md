@@ -30,23 +30,16 @@ NAF-Net基线网络的Block模块由LayerNorm、1x1卷积、3x3卷积、SimpleGa
 
 
 ## 5. 代码结构介绍 
-> config  
+> config 
 > &emsp;|-----mynafnet.yaml  #参数配置文件
-> ppgan  
+> ppgan 
 > &emsp;|-----models
->
 > ​        |-----generators
->
 > ​            |-----nafnet.py #网络定义文件
->
 > ​        |-----nafnet_model.py #网络训练及测试配置文件
->
 > submit
->
 > &emsp;|-----predict.py  #提交预测文件
->
 > tools
->
 > &emsp;|-----main.py  #训练启动文件
 
 
