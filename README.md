@@ -54,7 +54,7 @@ NAF-Net基线网络的Block模块由LayerNorm、1x1卷积、3x3卷积、SimpleGa
 
 ## 6. 执行命令
 
-1. 安装运行环境
+1. 安装运行环境（参考PaddleGAN的安装方式）
 
    ```
    pip install -r requirements.txt
@@ -84,3 +84,8 @@ NAF-Net基线网络的Block模块由LayerNorm、1x1卷积、3x3卷积、SimpleGa
    提取码：2156
 
    下载后放在submit文件夹下，和predict.py文件同级。
+
+## 参考链接
+
+1. https://github.com/PaddlePaddle/PaddleGAN
+2. https://github.com/megvii-research/NAFNet
