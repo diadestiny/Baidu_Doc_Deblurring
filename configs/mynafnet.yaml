@@ -1,0 +1,67 @@
+total_iters: 200000
+output_dir: output_dir
+
+
+model:
+  name: NAFModel
+  generator:
+    name: NAFNet
+    width: 32
+    enc_blk_nums: [ 1, 1, 1, 28 ]
+    middle_blk_num: 1
+    dec_blk_nums: [ 1, 1, 1, 1 ]
+  pixel_criterion:
+    name: PSNRLoss
+
+dataset:
+  train:
+    name: MPRTrain
+    rgb_dir: Datasets/doc_train
+    num_workers: 2
+    batch_size: 2
+    img_options:
+      patch_size: 512
+  test:
+    name: MPRVal
+    rgb_dir: Datasets/doc_test_10
+    num_workers: 1
+    batch_size: 1
+    img_options:
+      patch_size: 512
+
+
+lr_scheduler:
+  name: CosineAnnealingRestartLR
+  learning_rate: !!float 1e-3
+  periods: [400000]
+  eta_min: !!float 1e-7
+
+validate:
+  interval: 5000
+  save_img: false
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      name: PSNR
+      crop_border: 0
+      test_y_channel: True
+    ssim:
+      name: SSIM
+      crop_border: 0
+      test_y_channel: True
+
+optimizer:
+  name: AdamW
+  # add parameters of net_name to optim
+  # name should in self.nets
+  net_names:
+    - generator
+  beta1: 0.9
+  beta2: 0.9
+
+log_config:
+  interval: 100
+  visiual_interval: 1000
+
+snapshot_config:
+  interval: 2000
