@@ -85,7 +85,7 @@ NAF-Net基线网络的Block模块由LayerNorm、1x1卷积、3x3卷积、SimpleGa
 
    下载后放在submit文件夹下，和predict.py文件同级。
 
-[训练日志]: https://github.com/diadestiny/Baidu_Doc_Deblurring/blob/master/log.txt
+[比赛模型训练log](https://github.com/diadestiny/Baidu_Doc_Deblurring/blob/master/log.txt)
 
 (由于训练中断，目前只保留了iter为4000后的训练log)
 
