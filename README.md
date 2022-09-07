@@ -89,6 +89,10 @@ NAF-Net基线网络的Block模块由LayerNorm、1x1卷积、3x3卷积、SimpleGa
 
 (由于训练中断，目前只保留了iter为4000后的训练log)
 
+## 8. 基于Aistudio部署Notebook
+
+https://aistudio.baidu.com/aistudio/projectdetail/4507278
+
 ## 参考链接
 
 1. https://github.com/PaddlePaddle/PaddleGAN
