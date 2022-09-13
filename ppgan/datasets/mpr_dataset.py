@@ -106,10 +106,16 @@ class MPRTrain(Dataset):
         tar_img = to_tensor(tar_img)
 
         hh, ww = tar_img.shape[1], tar_img.shape[2]
-
-        rr = random.randint(0, hh - ps)
-        cc = random.randint(0, ww - ps)
-        aug = random.randint(0, 8)
+        
+        crop_h = int(hh*1/8)
+        crop_w = int(ww*1/10)
+        end_h = int(hh*7/8)
+        end_w = int(ww*9/10)
+        rr = random.randint(crop_h, end_h - ps)
+        cc = random.randint(crop_w, end_w - ps)
+        # rr = random.randint(0, hh - ps)
+        # cc = random.randint(0, ww - ps)
+        # aug = random.randint(0, 8)
 
         # Crop patch
         inp_img = inp_img[:, rr:rr + ps, cc:cc + ps]
